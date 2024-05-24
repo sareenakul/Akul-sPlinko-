@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Game</title>
+    <style>
+        canvas{
+            background-color: gray;
+        }
+
+        #add-ball{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: whitesmoke;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <button id="add-ball">Add Ball</button>
+    <script>
+        const canvas = document.getElementById("gameCanvas");
+        const ctx = canvas.getContext("2d");
+
+        const DECIMAL_MULTIPLIER = 10000;
+        const WIDTH = 800;
+        const HEIGHT = 800;
+        const ballRadius = 7;
+        const obstacleRadius = 4;
+        const GRAVITY = pad(0.2);
+        const horizontalFriction = 0.4;
+        const verticalFriction = 0.8;
+        let balls = [];
+
+        const obstacles = [];
+        const sinks = [];
+
+
+        function pad(num) {
+            return num * DECIMAL_MULTIPLIER;
+        }
+
+        function unpad(num) {
+            return Math.floor(num / DECIMAL_MULTIPLIER);
+        }
+    </script>
+</body>
